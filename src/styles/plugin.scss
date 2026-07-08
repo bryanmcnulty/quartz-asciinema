@@ -1,0 +1,6 @@
+@use "../../node_modules/asciinema-player/dist/bundle/asciinema-player.css" as *;
+
+.asciinema-player-theme-quartz {
+  @extend .asciinema-player-theme-asciinema;
+  --term-color-background: transparent;
+}
