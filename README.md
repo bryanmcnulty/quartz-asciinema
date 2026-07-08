@@ -1,6 +1,6 @@
 # quartz-asciinema
 
-This plugin allows you to seamlessly embed terminal session recordings (Asciinema casts) directly within your Quartz v5 site pages. It processes standard Markdown images referencing `.cast` files and passes the URL and player options to [the official Asciinema player](https://docs.asciinema.org/manual/player/).
+This plugin allows you to easily embed terminal session recordings (Asciinema casts) directly within your Quartz v5 site pages. It processes standard Markdown images referencing `.cast` files and passes the URL and optional player settings to [the official Asciinema player](https://docs.asciinema.org/manual/player/).
 
 ---
 
