@@ -41,6 +41,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "prepare": "npm run build",
     "lint": "eslint . --max-warnings=0",
     "format": "prettier . --check",
     "test": "vitest run",
