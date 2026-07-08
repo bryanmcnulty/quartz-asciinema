@@ -1,5 +1,3 @@
-import type { CSSResource, JSResource } from "@quartz-community/types";
-
 /**
  * Asciinema player options.
  * See the Asciinema docs for more info: https://docs.asciinema.org/manual/player/options/
@@ -24,7 +22,10 @@ export interface AsciinemaPlayerOptions {
 }
 
 /**
- * All options
+ * All options including custom stylesheet definition
+ * ```
+ * style: "border: 1px solid var(--lightgray) !important;" # add border
+ * ```
  **/
 export interface AsciinemaOptions extends AsciinemaPlayerOptions {
   /// Custom stylesheet to apply to asciicast containers
@@ -32,7 +33,18 @@ export interface AsciinemaOptions extends AsciinemaPlayerOptions {
 }
 
 /**
- * Options passed in markdown frontmatter
+ * Options passed in markdown frontmatter. See example below
+ * ```yaml
+ * ---
+ * asciinema:
+ *   terminalFontFamily: "'FiraCode Nerd Font', monospace"
+ *   theme: "dracula"
+ *   loop: true
+ *   autoplay: true
+ * created: 2026-07-08
+ * title: "Example note"
+ * ---
+ * ```
  **/
 export interface AsciinemaFrontmatterOptions {
   asciinema?: AsciinemaOptions | boolean,
