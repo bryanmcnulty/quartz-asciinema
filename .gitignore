@@ -40,3 +40,5 @@ coverage/
 # Cache
 .cache/
 .eslintcache
+
+*.cast
