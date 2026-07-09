@@ -60,17 +60,22 @@ export const AsciinemaTransformer: QuartzTransformerPlugin<Partial<AsciinemaOpti
     },
     externalResources() {
       return {
-        additionalHead: [
-          (pageData: QuartzPluginData) => {
-
-            if (pageData.frontmatter?.asciinema || pageData.asciinemaEnabled) {
-              return <div id="asciinema-vendor-resources">
-                <link rel="stylesheet" type="text/css" href="/static/asciinema-style.css" />
-                <script src="/static/asciinema-run.js" />
-              </div>
-            }
+        js: [
+          {
+            contentType: "external",
+            spaPreserve: true,
+            src: "/static/asciinema-run.js",
+            loadTime: "afterDOMReady"
           }
-        ]
+        ],
+        css: [
+          {
+            inline: false,
+            content: "/static/asciinema-style.css",
+            spaPreserve: true,
+          }
+        ],
+        additionalHead: []
       };
     },
   };

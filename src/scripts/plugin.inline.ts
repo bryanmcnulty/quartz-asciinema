@@ -1,13 +1,25 @@
-import * as AsciinemaPlayer from "asciinema-player";
-import type { AsciinemaPlayerOptions } from "../types";
+import type { AsciinemaOptions, AsciinemaPlayer as PlayerType } from "../types";
 
-export function asciinemaMain() {
+import * as AsciinemaPlayer from "asciinema-player"
+
+var players: Array<PlayerType> = []
+
+function asciinemaClose() {
+  players.forEach((instance: PlayerType) => {
+    instance.player.dispose();
+    instance.container.removeEventListener("nav", asciinemaMain)
+  })
+}
+
+function asciinemaLoad() {
   document.querySelectorAll('[data-asciinema-cast]').forEach((container: Element) => {
+    if (container.hasChildNodes()) return;
+
     const castAttribute = container.getAttribute('data-asciinema-cast');
     const optionsAttribute = container.getAttribute('data-asciinema-options');
 
     if (castAttribute) {
-      var options: AsciinemaPlayerOptions = {};
+      var options: AsciinemaOptions = {};
       try {
         if (optionsAttribute) {
           options = JSON.parse(optionsAttribute);
@@ -15,9 +27,17 @@ export function asciinemaMain() {
       } catch {
         console.warn(`[Asciinema] Failed to parse Asciinema player options`);
       } finally {
-        AsciinemaPlayer.create(castAttribute, container as HTMLElement, options);
+        const player = AsciinemaPlayer.create(castAttribute, container as HTMLElement, options);
+        players.push({ player: player, container: container })
       }
     }
   });
 }
-document.addEventListener("DOMContentLoaded", asciinemaMain);
+
+function asciinemaMain() {
+  asciinemaClose();
+  asciinemaLoad();
+}
+
+document.addEventListener("nav", asciinemaMain);
+document.addEventListener("render", asciinemaMain);
