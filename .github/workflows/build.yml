@@ -19,11 +19,8 @@ jobs:
         with:
           node-version: ">=22"
 
-      - name: "Install dependencies"
+      - name: "Install dependencies & build"
         run: "npm ci"
-
-      - name: "Build"
-        run: "npm run build"
 
       - name: "Upload dist"
         uses: "actions/upload-artifact@v7"
