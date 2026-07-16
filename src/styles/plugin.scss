@@ -2,5 +2,5 @@
 
 .asciinema-player-theme-quartz {
   @extend .asciinema-player-theme-asciinema;
-  --term-color-background: transparent;
+  --term-color-background: var(--light);
 }
