@@ -111,8 +111,6 @@ Below are the options available to configure the player. You can pass these glob
 | `cursorMode`         | `"blinking" | "steady"                                                                    | "hidden"`                                                       | Styles the interactive shell input text cursor behavior.                   |
 | `style`              | `string`    | Appends custom raw CSS styling directly onto individual container elements. |
 
-> 💡 **Tip:** When styling borders or structural spacing locally with the `style` key, use the `!important` flag to reliably override default styling rules. For example: `style: "border: 1px solid var(--lightgray) !important;"`
-
 ---
 
 ## License
