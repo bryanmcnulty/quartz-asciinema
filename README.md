@@ -91,25 +91,25 @@ plugins:
 
 Below are the options available to configure the player. You can pass these globally in your plugin registration, at the page level via frontmatter, or line-by-line via JSON alt fields.
 
-| Option               | Type        | Description                                                                 |
-| -------------------- | ----------- | --------------------------------------------------------------------------- |
-| `cols`               | `number`    | Width of the terminal pane in columns.                                      |
-| `rows`               | `number`    | Height of the terminal pane in rows.                                        |
-| `autoplay`           | `boolean`   | Starts playback automatically when the player loads.                        |
-| `loop`               | `boolean    | number`                                                                     | Enables infinite looping or specifies an exact number of loops. |
-| `speed`              | `number`    | Adjusts playback speed multiplier (e.g., `2` for double speed).             |
-| `idleTimeLimit`      | `number`    | Limits long pauses/idle times to a specific duration in seconds.            |
-| `theme`              | `string`    | Applies a built-in terminal color theme (e.g., `"dracula"`).                |
-| `poster`             | `string`    | Defines text or a frame image to display prior to playback.                 |
-| `fit`                | `"width"    | "height"                                                                    | "both"                                                          | "none"                                                                     | false` | Sets how the terminal container behaves to fit within parent bounds. |
-| `controls`           | `"auto"     | true                                                                        | false`                                                          | Controls visibility behavior of the interactive player controls dashboard. |
-| `keystrokeOverlay`   | `boolean`   | Displays a visual overlay representing real-time keyboard inputs.           |
-| `pauseOnMarkers`     | `boolean`   | Automatically halts playback when reaching predefined video timeline marks. |
-| `terminalFontSize`   | `string`    | Defines CSS-compatible font sizing for terminal text outputs.               |
-| `terminalFontFamily` | `string`    | Assigns CSS-compatible font families to rendering elements.                 |
-| `terminalLineHeight` | `number`    | Custom spacing height configuration factor for text layout grids.           |
-| `cursorMode`         | `"blinking" | "steady"                                                                    | "hidden"`                                                       | Styles the interactive shell input text cursor behavior.                   |
-| `style`              | `string`    | Appends custom raw CSS styling directly onto individual container elements. |
+| Option               | Type                                               | Description                                                                 |
+| -------------------- | -------------------------------------------------- | --------------------------------------------------------------------------- |
+| `cols`               | `number`                                           | Width of the terminal pane in columns.                                      |
+| `rows`               | `number`                                           | Height of the terminal pane in rows.                                        |
+| `autoplay`           | `boolean`                                          | Starts playback automatically when the player loads.                        |
+| `loop`               | `boolean \| number`                                | Enables infinite looping or specifies an exact number of loops.             |
+| `speed`              | `number`                                           | Adjusts playback speed multiplier (e.g., `2` for double speed).             |
+| `idleTimeLimit`      | `number`                                           | Limits long pauses/idle times to a specific duration in seconds.            |
+| `theme`              | `string`                                           | Applies a built-in terminal color theme (e.g., `"dracula"`).                |
+| `poster`             | `string`                                           | Defines text or a frame image to display prior to playback.                 |
+| `fit`                | `"width" \| "height" \| "both" \| "none" \| false` | Sets how the terminal container behaves to fit within parent bounds.        |
+| `controls`           | `"auto" \| true \| false`                          | Controls visibility behavior of the interactive player controls dashboard.  |
+| `keystrokeOverlay`   | `boolean`                                          | Displays a visual overlay representing real-time keyboard inputs.           |
+| `pauseOnMarkers`     | `boolean`                                          | Automatically halts playback when reaching predefined video timeline marks. |
+| `terminalFontSize`   | `string`                                           | Defines CSS-compatible font sizing for terminal text outputs.               |
+| `terminalFontFamily` | `string`                                           | Assigns CSS-compatible font families to rendering elements.                 |
+| `terminalLineHeight` | `number`                                           | Custom spacing height configuration factor for text layout grids.           |
+| `cursorMode`         | `"blinking" \| "steady" \| "hidden"`               | Styles the interactive shell input text cursor behavior.                    |
+| `style`              | `string`                                           | Appends custom raw CSS styling directly onto individual container elements. |
 
 > 💡 **Tip:** When styling borders or structural spacing locally with the `style` key, use the `!important` flag to reliably override default styling rules. For example: `style: "border: 1px solid var(--lightgray) !important;"`
 
